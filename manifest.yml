@@ -1,0 +1,10 @@
+---
+applications:
+  - name: my-ui5-app
+    path: dist
+    memory: 64M
+    buildpacks:
+      - https://github.com/cloudfoundry/staticfile-buildpack.git
+    random-route: true
+    env:
+      NODE_TLS_REJECT_UNAUTHORIZED: 0

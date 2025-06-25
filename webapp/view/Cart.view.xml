@@ -1,0 +1,52 @@
+<mvc:View
+  controllerName="ui5.walkthrough.controller.Cart"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:core="sap.ui.core"
+  xmlns="sap.m">
+
+  <VBox>
+    <Title text="Cart" level="H2" />
+
+    <List items="{cartModel>/items}">
+      <CustomListItem>
+        <HBox justifyContent="SpaceBetween" alignItems="Center" width="100%">
+
+          <!-- Left: Product Info -->
+          <HBox alignItems="Center">
+            <Image src="{cartModel>image}" width="50px" />
+            <VBox class="sapUiSmallMarginBegin">
+              <ObjectIdentifier title="{cartModel>name}" text="{cartModel>description}" />
+              <Text text="₹{cartModel>price}" />
+              <Text text="Quantity: {cartModel>quantity}" />
+            </VBox>
+          </HBox>
+
+          <!-- Right: Total + Delete Button -->
+          <HBox alignItems="Center">
+            <Text
+              text="₹{= ${cartModel>price} * ${cartModel>quantity} }"
+              class="sapUiSmallMarginEnd" />
+            <Button
+                icon="sap-icon://delete"
+                press=".onRemoveItemPress"
+                type="Reject"
+                tooltip="Remove one">
+                <customData>
+                  <core:CustomData key="name" value="{cartModel>name}" />
+                </customData>
+            </Button>
+
+          </HBox>
+
+        </HBox>
+      </CustomListItem>
+    </List>
+
+    <!-- Footer Total -->
+    <Toolbar>
+      <ToolbarSpacer />
+      <Text text="Total:" />
+      <Text text="{cartModel>/total}" />
+    </Toolbar>
+  </VBox>
+</mvc:View>

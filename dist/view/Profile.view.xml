@@ -1,0 +1,15 @@
+<mvc:View
+  controllerName="ui5.walkthrough.controller.Profile"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m">
+
+  <VBox class="sapUiSmallMargin">
+    <Title text="Profile" />
+
+    <Text text="{= 'Username: ' + ${userModel>/username} }" />
+    <Text text="{= 'Role: ' + ${userModel>/role} }" />
+    <Text text="{= 'Address: ' + ${userModel>/address} }" />
+    <Text text="{= 'Phone: ' + ${userModel>/phone} }" />
+  </VBox>
+
+</mvc:View>

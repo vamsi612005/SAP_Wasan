@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/model/json/JSONModel"],function(e,o){"use strict";return e.extend("ui5.walkthrough.controller.Overview",{onInit:function(){const e=new o("model/products.json");this.getView().setModel(e)}})});
+//# sourceMappingURL=Overview.controller.js.map

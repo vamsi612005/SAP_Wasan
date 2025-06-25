@@ -1,0 +1,25 @@
+{
+  "products": [
+    {
+      "name": "Wireless Mouse",
+      "price": 899,
+      "quantity": 50,
+      "description": "Ergonomic wireless mouse with USB receiver.",
+      "image": "https://www.okschoolandoffice.com.au/assets/alt_2/10409684.jpg?20190605103054"
+    },
+    {
+      "name": "Keyboard",
+      "price": 1299,
+      "quantity": 30,
+      "description": "Mechanical keyboard with backlight.",
+      "image": "https://thetechhacker.com/wp-content/uploads/2016/12/What-is-Keyboard.jpg"
+    },
+    {
+      "name": "Monitor",
+      "price": 7999,
+      "quantity": 10,
+      "description": "24-inch full HD monitor.",
+      "image": "https://www.bhphotovideo.com/images/images2000x2000/samsung_s27c350h_27_16_9_led_971590.jpg"
+    }
+  ]
+}

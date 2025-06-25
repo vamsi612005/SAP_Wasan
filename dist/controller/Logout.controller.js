@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/core/UIComponent","sap/m/MessageToast"],function(e,o,s){"use strict";return e.extend("ui5.walkthrough.controller.Logout",{onLogoutConfirm:function(){sap.ui.getCore().setModel(null,"userModel");sap.ui.getCore().setModel(null,"cartModel");s.show("You have been logged out successfully (Session cleared).")}})});
+//# sourceMappingURL=Logout.controller.js.map

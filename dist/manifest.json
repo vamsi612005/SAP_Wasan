@@ -1,0 +1,90 @@
+{
+  "_version": "1.12.0",
+  "sap.app": {
+    "id": "ui5.walkthrough",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "title": "Walkthrough",
+    "description": "Sample UI5 App"
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "ui5.walkthrough.view.App",
+      "type": "XML",
+      "id": "app"
+    },
+    "dependencies": {
+      "minUI5Version": "1.60",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.ui.layout": {},
+        "sap.suite.ui.microchart": {},
+        "sap.f": {}
+      }
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "ui5.walkthrough.i18n.i18n"
+        }
+      }
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "ui5.walkthrough.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "async": true,
+        "bypassed": {
+          "target": "Login"
+        }
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "Login",
+          "target": "Login"
+        },
+        {
+          "pattern": "app",
+          "name": "App",
+          "target": "App"
+        },
+        {
+          "pattern": "admin",
+          "name": "AdminDashboard",
+          "target": "AdminDashboard"
+        }
+      ],
+      "targets": {
+        "Login": {
+          "viewName": "Login"
+        },
+        "App": {
+          "viewName": "App"
+        },
+        "AdminDashboard": {
+          "viewName": "AdminDashboard"
+        }
+      }
+    }
+  }
+}

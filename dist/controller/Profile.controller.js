@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/mvc/Controller"],function(e){"use strict";return e.extend("ui5.walkthrough.controller.Profile",{onInit:function(){const e=sap.ui.getCore().getModel("userModel");if(e){this.getView().setModel(e,"userModel");console.log("UserModel in Profile:",e.getData())}else{console.warn("UserModel not found")}}})});
+//# sourceMappingURL=Profile.controller.js.map

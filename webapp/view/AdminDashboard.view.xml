@@ -1,0 +1,29 @@
+<mvc:View
+  controllerName="ui5.walkthrough.controller.AdminDashboard"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  displayBlock="true">
+
+  <App id="adminApp">
+    <Page showHeader="false">
+      <content>
+        <HBox width="100%">
+          <!-- Sidebar -->
+          <VBox width="200px" class="sapUiSmallMargin" alignItems="Start">
+            <List id="adminNavList" mode="None" itemPress=".onNavItemPress">
+              <StandardListItem title="Overview" type="Active" icon="sap-icon://overview-chart" />
+              <StandardListItem title="Profile" type="Active" icon="sap-icon://employee" />
+              <StandardListItem title="Logout" type="Active" icon="sap-icon://log" />
+            </List>
+          </VBox>
+
+          <!-- Dynamic Main Content -->
+          <VBox id="mainContent" class="sapUiSmallMargin" width="100%">
+            <mvc:XMLView id="dynamicView" viewName="ui5.walkthrough.view.Overview"/>
+          </VBox>
+        </HBox>
+      </content>
+    </Page>
+  </App>
+</mvc:View>

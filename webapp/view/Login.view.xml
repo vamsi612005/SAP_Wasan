@@ -1,0 +1,13 @@
+<mvc:View
+  controllerName="ui5.walkthrough.controller.Login"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m">
+
+  <VBox class="sapUiSmallMargin">
+    <Title text="Login" level="H2" />
+    <Input id="username" placeholder="Username" />
+    <Input id="password" placeholder="Password" type="Password" />
+    <Button text="Login" press=".onLoginPress" type="Emphasized" />
+  </VBox>
+
+</mvc:View>

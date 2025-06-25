@@ -1,0 +1,25 @@
+<mvc:View
+  controllerName="ui5.walkthrough.controller.Products"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m">
+
+  <VBox>
+    <List id="productList" items="{/products}">
+      <CustomListItem>
+        <HBox justifyContent="SpaceBetween" alignItems="Center" width="100%">
+          <VBox>
+            <ObjectIdentifier title="{name}" text="{description}" />
+            <Text text="₹{price}" />
+            <Text text="Quantity: {quantity}" />
+          </VBox>
+          <VBox alignItems="End">
+            <Image src="{image}" width="80px" />
+            <Button
+              text="Add to Cart"
+              press=".onAddToCartButtonPress" />
+          </VBox>
+        </HBox>
+      </CustomListItem>
+    </List>
+  </VBox>
+</mvc:View>

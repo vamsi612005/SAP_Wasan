@@ -1,0 +1,30 @@
+<mvc:View
+  controllerName="ui5.walkthrough.controller.App"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  displayBlock="true">
+
+  <App id="app">
+    <Page showHeader="false">
+      <content>
+        <HBox width="100%">
+          <!-- Sidebar -->
+          <VBox width="200px" class="sapUiSmallMargin" alignItems="Start">
+            <List id="navList" mode="None" itemPress="onNavItemPress">
+              <StandardListItem title="Products" type="Active" icon="sap-icon://product" />
+              <StandardListItem title="Cart" type="Active" icon="sap-icon://cart" />
+              <StandardListItem title="Profile" type="Active" icon="sap-icon://customer" />
+              <StandardListItem title="Logout" type="Active" icon="sap-icon://log" />
+            </List>
+          </VBox>
+
+          <!-- Main Content -->
+          <VBox id="mainContent" class="sapUiSmallMargin" width="100%">
+            <mvc:XMLView id="dynamicView" viewName="ui5.walkthrough.view.Products"/>
+          </VBox>
+        </HBox>
+      </content>
+    </Page>
+  </App>
+</mvc:View>

@@ -1,0 +1,106 @@
+<mvc:View
+  controllerName="ui5.walkthrough.controller.Overview"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:micro="sap.suite.ui.microchart"
+  xmlns:core="sap.ui.core">
+
+  <ScrollContainer vertical="true" height="100%" width="100%">
+    <VBox class="sapUiSmallMargin" width="100%">
+      <Title text="Admin Overview" level="H2" />
+
+      <!-- Responsive Card Layout -->
+      <HBox wrap="Wrap" justifyContent="Start" alignItems="Start" class="sapUiSmallMargin">
+
+        <!-- Card 1: Product List -->
+        <Panel headerText="All Products" class="sapUiTinyMargin" width="350px">
+          <List items="{/products}">
+            <StandardListItem title="{name}" description="{description}" icon="{image}" />
+          </List>
+        </Panel>
+
+        <!-- Card 2: Top Selling Product -->
+        <Panel headerText="Top Selling Product" class="sapUiTinyMargin" width="350px">
+          <VBox>
+            <ObjectHeader
+              title="{/products/0/name}"
+              number="{/products/0/quantity}"
+              numberUnit="Qty Available"
+              intro="{/products/0/description}" />
+            <Image src="{/products/0/image}" width="100px" />
+          </VBox>
+        </Panel>
+
+        <!-- Card 3: Product Prices -->
+        <Panel headerText="Product Prices" class="sapUiTinyMargin" width="350px">
+          <List items="{/products}">
+            <DisplayListItem label="{name}" value="₹{price}" />
+          </List>
+        </Panel>
+
+        <!-- Card 4: Low Stock Products -->
+        <Panel headerText="Low Stock Alerts" class="sapUiTinyMargin" width="350px">
+          <List items="{
+            path: '/products',
+            filters: [{ path: 'quantity', operator: 'LT', value1: 20 }]
+          }">
+            <ObjectListItem title="{name}" number="{quantity}" numberUnit="units left" />
+          </List>
+        </Panel>
+
+        <!-- Card 5: Stock Quantity Chart -->
+<Panel headerText="Stock Quantity Overview" class="sapUiTinyMargin" width="350px">
+  <VBox>
+    <micro:ColumnMicroChart>
+      <micro:columns>
+        <micro:ColumnMicroChartData
+          label="{/products/0/name}"
+          value="{= parseFloat(${/products/0/quantity}) }"
+          color="Good" />
+        <micro:ColumnMicroChartData
+          label="{/products/1/name}"
+          value="{= parseFloat(${/products/1/quantity}) }"
+          color="Critical" />
+        <micro:ColumnMicroChartData
+          label="{/products/2/name}"
+          value="{= parseFloat(${/products/2/quantity}) }"
+          color="Error" />
+      </micro:columns>
+    </micro:ColumnMicroChart>
+
+    <!-- Optional Legend -->
+    <List>
+      <StandardListItem title="{/products/0/name}" description="Qty: {/products/0/quantity}" />
+      <StandardListItem title="{/products/1/name}" description="Qty: {/products/1/quantity}" />
+      <StandardListItem title="{/products/2/name}" description="Qty: {/products/2/quantity}" />
+    </List>
+  </VBox>
+</Panel>
+
+<!-- Card 6: Price Comparison Chart -->
+<Panel headerText="Price Comparison" class="sapUiTinyMargin" width="350px">
+  <VBox>
+    <micro:ComparisonMicroChart>
+      <micro:data>
+        <micro:ComparisonMicroChartData
+          title="{/products/0/name}"
+          value="{= parseFloat(${/products/0/price}) }"
+          color="Good" />
+        <micro:ComparisonMicroChartData
+          title="{/products/1/name}"
+          value="{= parseFloat(${/products/1/price}) }"
+          color="Critical" />
+        <micro:ComparisonMicroChartData
+          title="{/products/2/name}"
+          value="{= parseFloat(${/products/2/price}) }"
+          color="Error" />
+      </micro:data>
+    </micro:ComparisonMicroChart>
+  </VBox>
+</Panel>
+
+
+      </HBox>
+    </VBox>
+  </ScrollContainer>
+</mvc:View>

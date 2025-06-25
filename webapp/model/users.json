@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "password": "admin123",
+      "address": "Admin Street",
+      "phone": "1234567890",
+      "role": "Admin"
+    },
+    {
+      "username": "customer",
+      "password": "customer123",
+      "address": "Customer Street",
+      "phone": "1234567890",
+      "role": "Customer"
+    }
+  ]
+}
